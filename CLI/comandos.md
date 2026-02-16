@@ -53,9 +53,14 @@ python manage.py runserver 8000 --settings=prod
 ```bash
 pwd        # dónde estoy
 ls         # qué hay aquí
+ls -l      # vista detallada
+ls -a      # muestra archivos ocultos (a es de all)
 cd carpeta # moverme
+cd ~       # ir al home
+cd ..      # subir un nivel
 mkdir      # crear carpeta
 rm         # borrar
+rm -r      # borrar carpeta
 cp         # copiar
 mv         # mover
 ```

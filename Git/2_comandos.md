@@ -26,7 +26,7 @@ Internamente hace: `git fetch + git merge`
 
 ## git push
 
-Envía los commits locales al repositorio remoto.`
+Envía los commits locales al repositorio remoto.
 
 ## git clone
 

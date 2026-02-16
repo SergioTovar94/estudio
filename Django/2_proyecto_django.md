@@ -1,10 +1,19 @@
 # Pasos para crear el proyecto
 
-`virtualenv venv`
+`python -m venv venv`
 
 `.\venv\Scripts\activate`
 
 `pip install django`
+
+`pip freeze > requirements.txt`
+
+Esto genera un archivo con:
+
+```
+Django==5.0.1
+asgiref==3.7.2
+```
 
 `django-admin startproject nombre-proyecto .`
 El . al final permite que se cree todo el proyecto en la carpeta en la que nos encontramos y no
