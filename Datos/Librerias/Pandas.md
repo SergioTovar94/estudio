@@ -2,40 +2,85 @@
 
 En 2008, AQR Capital Management comenzó a desarrollar pandas . A finales de 2009, ya era de código abierto y hoy cuenta con el apoyo activo de una comunidad de personas con ideas afines en todo el mundo que aportan su valioso tiempo y energía para hacer posible el código abierto de pandas . Gracias a todos nuestros colaboradores .
 
-Desde 2015, pandas es un proyecto patrocinado por NumFOCUS . Esto contribuirá al éxito del desarrollo de pandas como un proyecto de código abierto de primer nivel.
+# ¿Qué es un Dataframe
 
-Cronología #
-2008 : Se inició el desarrollo de pandas
-2009 : Pandas se convierte en código abierto
-2012 : Se publica la primera edición de Python para análisis de datos
-2015 : Pandas se convierte en un proyecto patrocinado por NumFOCUS
-2018 : Primer sprint presencial para desarrolladores principales
+Un DataFrame es una tabla de datos en memoria y tiene:
 
-Aspectos destacados de la biblioteca #
-Un objeto DataFrame rápido y eficiente para la manipulación de datos con indexación integrada;
+- Filas → registros (ej: una persona, una votación, una venta)
+- Columnas → variables (edad, nombre, votos, fecha…)
+- Índice → identificador de cada fila
 
-Herramientas para leer y escribir datos entre estructuras de datos en memoria y diferentes formatos: archivos CSV y de texto, Microsoft Excel, bases de datos SQL y el rápido formato HDF5;
+| índice | nombre | edad | ciudad   |
+| ------ | ------ | ---- | -------- |
+| 0      | Ana    | 25   | Bogotá   |
+| 1      | Luis   | 30   | Cali     |
+| 2      | Carlos | 22   | Medellín |
 
-Alineación inteligente de datos y manejo integrado de datos faltantes : obtenga una alineación automática basada en etiquetas en los cálculos y manipule fácilmente datos desordenados en una forma ordenada;
+# ¿Qué lo hace diferente de una lista o diccionario?
 
-Remodelación y pivotación flexible de conjuntos de datos;
+Podrías guardar eso como:
 
-Segmentación inteligente basada en etiquetas , indexación sofisticada y subconjuntos de grandes conjuntos de datos;
+```Python
+[
+  {"nombre": "Ana", "edad": 25},
+  {"nombre": "Luis", "edad": 30}
+]
+```
 
-Es posible insertar y eliminar columnas de las estructuras de datos para permitir la mutabilidad del tamaño ;
+Pero un DataFrame:
 
-Agregación o transformación de datos con un potente motor de agrupación que permite operaciones de división-aplicación-combinación en conjuntos de datos;
+- Está optimizado para operar columnas completas
+- Permite cálculos vectorizados
+- Tiene funciones estadísticas integradas
+- Está diseñado para análisis de datos
 
-Fusión y unión de conjuntos de datos de alto rendimiento ;
+## Estructuras de datos
 
-La indexación de ejes jerárquicos proporciona una forma intuitiva de trabajar con datos de alta dimensión en una estructura de datos de menor dimensión;
+### Dataframe
 
-Funcionalidad de series temporales : generación de rangos de fechas y conversión de frecuencias, estadísticas de ventanas móviles, desplazamiento y rezago de fechas. Incluso puede crear desfases horarios específicos del dominio y unir series temporales sin perder datos.
+Tabla bidimensional (filas y columnas)
 
-Altamente optimizado para el rendimiento , con rutas de código críticas escritas en Cython o C.
+### Series
 
-Python con pandas se utiliza en una amplia variedad de dominios académicos y comerciales , incluidos finanzas, neurociencia, economía, estadística, publicidad, análisis web y más.
+Una columna individual
 
-# ydata-profiling
+df["Edad"]
 
-Es un paquete líder para la creación de perfiles de datos que automatiza y estandariza la generación de informes detallados, con estadísticas y visualizaciones. Su importancia radica en cómo optimiza el proceso de comprensión y preparación de datos para el análisis con una sola línea de código.
+Un DataFrame es básicamente un conjunto de Series alineadas por índice.
+
+# Métodos de Pandas
+
+| Método          | Descripción                    | Ejemplo                       |
+| --------------- | ------------------------------ | ----------------------------- |
+| `head()`        | Muestra las primeras filas     | `df.head(5)`                  |
+| `tail()`        | Muestra las últimas filas      | `df.tail(3)`                  |
+| `info()`        | Información sobre el DataFrame | `df.info()`                   |
+| `describe()`    | Estadísticas descriptivas      | `df.describe()`               |
+| `shape`         | Dimensiones (filas, columnas)  | `df.shape`                    |
+| `columns`       | Nombres de las columnas        | `df.columns`                  |
+| `dtypes`        | Tipos de datos de cada columna | `df.dtypes`                   |
+| `isnull()`      | Detecta valores nulos          | `df.isnull()`                 |
+| `fillna()`      | Rellena valores nulos          | `df.fillna(0)`                |
+| `drop()`        | Elimina filas o columnas       | `df.drop('edad', axis=1)`     |
+| `sort_values()` | Ordena por columna             | `df.sort_values('edad')`      |
+| `groupby()`     | Agrupa datos                   | `df.groupby('ciudad').sum()`  |
+| `merge()`       | Une DataFrames                 | `pd.merge(df1, df2, on='id')` |
+| `loc[]`         | Selecciona por etiqueta        | `df.loc[0, 'nombre']`         |
+| `iloc[]`        | Selecciona por posición        | `df.iloc[0, 1]`               |
+
+# Funciones Globales de Pandas
+
+| Pd.   | Función         | Descripción                | Ejemplo                                              |
+| ----- | --------------- | -------------------------- | ---------------------------------------------------- |
+| `pd.` | `read_csv()`    | Lee archivo CSV            | `pd.read_csv('datos.csv')`                           |
+| `pd.` | `read_excel()`  | Lee archivo Excel          | `pd.read_excel('datos.xlsx')`                        |
+| `pd.` | `read_json()`   | Lee archivo JSON           | `pd.read_json('datos.json')`                         |
+| `pd.` | `read_sql()`    | Lee datos de base de datos | `pd.read_sql(query, conexión)`                       |
+| `pd.` | `DataFrame()`   | Crea un DataFrame          | `pd.DataFrame({'col1': [1, 2]})`                     |
+| `pd.` | `Series()`      | Crea una Series            | `pd.Series([1, 2, 3])`                               |
+| `pd.` | `concat()`      | Concatena DataFrames       | `pd.concat([df1, df2])`                              |
+| `pd.` | `merge()`       | Une DataFrames             | `pd.merge(df1, df2, on='id')`                        |
+| `pd.` | `pivot_table()` | Crea tabla pivote          | `pd.pivot_table(df, values='venta', index='ciudad')` |
+| `pd.` | `to_csv()`      | Guarda CSV                 | `df.to_csv('salida.csv')`                            |
+| `pd.` | `to_excel()`    | Guarda Excel               | `df.to_excel('salida.xlsx')`                         |
+| `pd.` | `to_json()`     | Guarda JSON                | `df.to_json('salida.json')`                          |
