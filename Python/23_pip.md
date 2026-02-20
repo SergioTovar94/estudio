@@ -28,29 +28,36 @@ Es el repositorio oficial de paquetes Python. Ahí están librerías como:
 - ydata-profiling
 - etc.
 
-Comandos más importantes
+## Comandos más importantes
 
 Te dejo los que más vas a usar en tu día a día 👇
 
-📦 Instalar un paquete
+### 📦 Instalar un paquete
+
 pip install pandas
 
-📌 Instalar una versión específica
+### 📌 Instalar una versión específica
+
 pip install pandas==2.2.0
 
-🔄 Actualizar un paquete
+### 🔄 Actualizar un paquete
+
 pip install --upgrade pandas
 
-❌ Desinstalar
+### ❌ Desinstalar
+
 pip uninstall pandas
 
-📋 Ver lo que tienes instalado
+### 📋 Ver lo que tienes instalado
+
 pip list
 
-📄 Generar archivo requirements.txt
+### 📄 Generar archivo requirements.txt
+
 pip freeze > requirements.txt
 
-📥 Instalar desde requirements.txt
+### 📥 Instalar desde requirements.txt
+
 pip install -r requirements.txt
 
 Esto es clave cuando trabajas en proyectos como el tuyo de análisis electoral.
