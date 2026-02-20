@@ -21,3 +21,23 @@ Y ahora se hace así:
 from pathlib import Path
 Path("data") / "raw" / "archivo.csv"
 ```
+
+### Unir rutas
+
+```Python
+nueva = Path("data") / "silver" / "ventas.parquet"
+```
+
+El operador / une partes de la ruta.
+✔ Es multiplataforma
+✔ Evita errores con \ y /
+
+### Obtener partes de ruta
+
+```Python
+ruta.name        # ventas.parquet
+ruta.stem        # ventas
+ruta.suffix      # .parquet
+ruta.parent      # data/silver
+ruta.parts       # ('data', 'silver', 'ventas.parquet')
+```
