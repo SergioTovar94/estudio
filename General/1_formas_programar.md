@@ -1,4 +1,8 @@
-# Programación imperativa
+# Formas de programar
+
+## Según paradigma (como expresas el código)
+
+### Programación imperativa
 
 Le dices paso a paso cómo hacer algo.
 
@@ -12,7 +16,7 @@ for fila in filas:
 
 Le estás diciendo exactamente qué hacer en cada paso.
 
-# Programación declarativa
+### Programación declarativa
 
 No dices cómo hacerlo. Dices qué resultado quieres.
 
@@ -23,3 +27,28 @@ SELECT nombre
 FROM personas
 WHERE edad > 18
 ```
+
+## Según modelo de ejecución (concurrencia)
+
+🔹 Síncrono
+
+Bloquea mientras espera.
+
+🔹 Asíncrono
+
+No bloquea mientras espera.
+
+## Según arquitectura
+
+- Monolito
+- Microservicios
+- Cliente-servidor
+- Serverless
+- Hexagonal
+
+## Según tipado
+
+Según tipado
+
+- Tipado estático
+- Tipado dinámico
