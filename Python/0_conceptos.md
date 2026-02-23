@@ -55,3 +55,38 @@ Un iterable puede producir iteradores; un iterador mantiene estado y se agota.
 # PEP8
 
 PEP8 (Python Enhancement Proposal 8) es la guía de estilo oficial para escribir código en Python, enfocada en maximizar la legibilidad y consistencia.
+
+# I/O Bound y CPU Bound
+
+Un programa puede tardarse por dos razones:
+
+- Está esperando algo externo. - I/O
+- Está calculando intensamente. - CPU
+
+## Un proceso es I/O-bound
+
+Cuando el tiempo se pierde esperando algo externo.
+
+Ejemplos:
+
+- 🌐 Petición a una API
+- 🗄️ Consulta a base de datos
+- 📂 Leer un archivo grande
+- 📡 Esperar respuesta de red
+
+## Un proceso es CPU bound
+
+Cuando el tiempo se pierde haciendo cálculos intensos.
+
+- 🔢 Algoritmos complejos
+- 📊 Procesamiento de datos grande
+- 🖼️ Procesamiento de imágenes
+- 🤖 Machine learning
+- 🔐 Encriptación
+
+Aquí async no ayuda. Necesitas multiprocessing para usar varios núcleos.
+
+| Tipo      | Qué limita     | Ejemplo           | Solución ideal  |
+| --------- | -------------- | ----------------- | --------------- |
+| I/O-Bound | Espera externa | API, DB, archivos | async / threads |
+| CPU-Bound | Cálculo pesado | ML, imágenes      | multiprocessing |

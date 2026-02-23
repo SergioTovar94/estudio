@@ -92,3 +92,24 @@ En el centro del círculo, tenemos el Dominio o las reglas comerciales. Las regl
 Idealmente, el código que representa las reglas de negocio debería ser el corazón del sistema, con preocupaciones menores conectadas a ellas. Las reglas comerciales deben ser el código más independiente e inmutable del sistema.
 
 Cuanto más exterior vayas en el círculo, los elementos se vuelven menos críticos y más propensos a cambiar. En este sentido, la presentación y los datos son menos importantes ya que son implementaciones que eventualmente pueden ser reemplazadas.
+
+# Clean code
+
+Se enfoca en cómo escribir código dentro de una clase o función.
+Principios típicos:
+
+- Nombres claros y expresivos
+- Funciones pequeñas
+- Una sola responsabilidad
+- No duplicación
+- Código fácil de leer
+- Bajo acoplamiento
+
+# Diferencias
+
+| Clean Code              | Clean Architecture          |
+| ----------------------- | --------------------------- |
+| Cómo escribir funciones | Cómo estructurar el sistema |
+| Nivel micro             | Nivel macro                 |
+| Legibilidad             | Organización y dependencia  |
+| Mejora código interno   | Mejora diseño global        |

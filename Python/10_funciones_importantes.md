@@ -81,3 +81,29 @@ Ejemplos típicos:
 - Conexiones a bases de datos
 - Locks
 - Sockets
+
+# Context Manager
+
+Algo que se encarga de limpiar automáticamente después de usar un recurso.
+
+Sin with:
+
+```Python
+archivo = open("datos.txt")
+contenido = archivo.read()
+archivo.close()
+```
+
+Con with:
+
+```Python
+with open("datos.txt") as archivo:
+    contenido = archivo.read()
+```
+
+Siempre que se utilice with con algo, ese algo debe tener:
+
+```Python
+__enter__()
+__exit__()
+```
