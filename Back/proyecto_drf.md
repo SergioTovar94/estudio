@@ -9,8 +9,16 @@
 ## Se instalan las dependencias necesarias
 
 `pip install django`
+Habilita models, ORM, vistas.
+
 `pip install djangorestframework`
+Habilita mejor manejo de URL, serializers, autenticación, permisos avanzados
+
 `pip install django-cors-headers`
+CORS significa Cross-Origin Resource Sharing.
+Esta librería le dice al navegador:
+
+"Está permitido que este frontend haga peticiones a este backend".
 
 ## Se crea el requirements
 
@@ -47,6 +55,14 @@ MIDDLEWARE = [
     ...,
 ]
 ```
+
+```Python
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000",
+]
+```
+
+CORS_ALLOWED_ORIGINS le dice a Django qué orígenes (dominios + puertos) pueden hacer peticiones a tu API.
 
 ## Crear app
 
@@ -89,7 +105,7 @@ class PacienteSerializer(serializers.ModelSerializer):
         fields = '__all__'
 ```
 
-Aquí ya no es solo django, es DRF. La clase, al heredar de ModelSerializer, va a poder hacer traducción de sus datos a JSON.
+La clase, al heredar de ModelSerializer, va a poder hacer traducción de sus datos a JSON.
 Se le indica a la meta descripción que el modelo es paciente y que puede entregar todos los objetos.
 
 ## Viewsets
@@ -110,6 +126,8 @@ El query set sabe de donde sacar los datos con el modelo. Y como traducirlos con
 
 ## Configuración de urls
 
+### Dentro de la app se crea el arcivos urls.py
+
 ```Python
 from rest_framework.routers import DefaultRouter
 from .views import PacienteViewSet
@@ -122,7 +140,7 @@ urlpatterns = router.urls
 
 Aquí el router hace la magia. Cuando se hace el register se crean todas las rutas.
 
-En urls del config
+### En urls del config
 
 En Django, el urls.py de una app siempre espera:
 
