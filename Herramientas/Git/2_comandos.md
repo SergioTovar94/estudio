@@ -1,4 +1,4 @@
-## git init
+# git init
 
 Inicializa un repositorio Git en la carpeta actual (crea la carpeta oculta .git).
 

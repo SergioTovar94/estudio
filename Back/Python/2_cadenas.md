@@ -9,6 +9,16 @@ texto[-1]   # "n"
 texto[0:3]  # "Pyt"
 ```
 
+## Concatenar
+
+Concatenar cadenas en Python se logra principalmente usando el operador.
+
+```Python
+str1 = "Hola"
+str2 = "Mundo"
+resultado = str1 + " " + str2  # Resultado: "Hola Mundo"
+```
+
 | Método          | Qué hace                                   | Uso                                                                                  |
 | --------------- | ------------------------------------------ | ------------------------------------------------------------------------------------ |
 | lower()         | Convierte a minúsculas                     | `cadena.lower()`                                                                     |
