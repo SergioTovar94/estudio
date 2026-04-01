@@ -21,9 +21,29 @@ Spring MVC → para aplicaciones web
 
 Spring Security → autenticación y permisos
 
-Spring Data → acceso a bases de datos
+Spring JPA → acceso a bases de datos
 
 Spring Cloud → microservicios y arquitectura distribuida
+
+## Flujo completo en Spring
+
+```
+Cliente
+   ↓
+Filtro de seguridad (Spring Security)
+   ↓
+Controller (Spring MVC)
+   ↓
+Validación
+   ↓
+Service (lógica de negocio)
+   ↓
+Repository (Spring Data JPA)
+   ↓
+Base de datos
+   ↓
+Respuesta
+```
 
 ## Qué es Spring MVC
 
@@ -36,21 +56,3 @@ MVC significa:
 | Model      | Maneja los datos      |
 | View       | Lo que ve el usuario  |
 | Controller | Recibe las peticiones |
-
-## Qué es Spring Boot
-
-Ahora viene lo importante.
-
-Spring Boot es una herramienta que simplifica muchísimo Spring.
-
-Antes de Spring Boot, crear una app Spring implicaba:
-
-Mucha configuración XML
-
-Configurar servidor
-
-Configurar dependencias
-
-Configurar beans manualmente
-
-Podía tomar horas o días iniciar un proyecto.
