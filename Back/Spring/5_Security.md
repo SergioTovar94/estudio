@@ -15,3 +15,9 @@ Se encarga de:
 - XSS
 - Session fixation
 - Brute force
+
+## SecurityFilterChain
+
+## UserDetailsService
+
+## PasswordEncoder
